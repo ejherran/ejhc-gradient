@@ -30,13 +30,13 @@ def main():
             )
 
             input_learning_ratio = input('Enter the learning ratio: ')
-            learning_ratio = np.float64(input_learning_ratio)
+            learning_ratio = np.float64(float(input_learning_ratio))
 
             input_tolerance = input('Enter the tolerance: ')
-            tolerance = np.float64(input_tolerance)
+            tolerance = np.float64(float(input_tolerance))
 
             input_max_iterations = input('Enter the maximum number of iterations: ')
-            max_iterations = np.int64(input_max_iterations)
+            max_iterations = np.int64(float(input_max_iterations))
 
         except ValueError:
             print('Ivalid parameters, try again.')

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EJHC Gradient</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+    <h2>Parámetros de Ejecución</h2>
+
+    <form id="optimizationForm">
+        <label for="variables">Lista de Variables:</label><br>
+        <input type="text" id="variables" name="variables" placeholder="x y z"><br>
+
+        <label for="function">Función a Evaluar:</label><br>
+        <input type="text" id="function" name="function" placeholder="x^2 + 3*sin(y) - root(z^3, 4)"><br>
+
+        <label for="initialVector">Vector Inicial:</label><br>
+        <input type="text" id="initialVector" name="initialVector" placeholder="-1 0 1"><br>
+
+        <label for="learningRate">Ratio de Aprendizaje:</label><br>
+        <input type="number" id="learningRate" name="learningRate" placeholder="0.001"><br>
+
+        <label for="tolerance">Tolerancia:</label><br>
+        <input type="number" id="tolerance" name="tolerance" step="any" placeholder="1e-12"><br>
+
+        <label for="maxIterations">Número Máximo de Iteraciones:</label><br>
+        <input type="number" id="maxIterations" name="maxIterations" placeholder="1e5"><br>
+        
+        <br />
+        <input type="button" value="Enviar" onclick="sendData()">
+    </form>
+
+    <div id="result">
+        <h2>Resultados</h2>
+        <b>La función tiene mínimo aproximado en punto:</b>
+        (<span id="resultVector"></span>)
+
+        <br />
+
+        <b>El valor de la función evaluada en el vector es:</b>
+        <span id="resultValue"></span>
+    </div>
+
+</body>
+</html>
